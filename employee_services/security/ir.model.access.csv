@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_employee_service,access.employee.service,model_employee_service,,1,1,1,1
+access_service_line,access.service.line,model_employee_service_line,,1,1,1,1

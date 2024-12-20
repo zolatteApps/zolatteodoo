@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_employee_form" model="ir.ui.view">
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <page name="hr_settings" position="after">
+                <page name="service_info" string="Service Information">
+                    <field name="service_id">
+                        <tree string="Services">
+                            <field name="name"/>
+                            <field name="status"/>
+                            <button groups="hr.group_hr_manager" string="Approve" name="approve_service" type="object"
+                                    class="btn-secondary"
+                                    invisible="status == 'approved'"/>
+                            <button groups="hr.group_hr_manager" string="Reject" name="reject_service" type="object"
+                                    class="btn-secondary" invisible="status == 'rejected'"/>
+                        </tree>
+                    </field>
+                </page>
+            </page>
+        </field>
+    </record>
+
+</odoo>

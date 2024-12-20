@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <!-- employee service tree view-->
+    <record id="employee_service_view_form" model="ir.ui.view">
+        <field name="name">employee.service.view.form</field>
+        <field name="model">employee.service</field>
+        <field eval="2" name="priority"/>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="image_720" widget="image" class="oe_avatar"
+                                   options="{'preview_image': 'image_720'}"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="employee_ids">
+                            <tree string="Employee" editable="bottom">
+                                <field name="name"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="employee_service_view_tree" model="ir.ui.view">
+        <field name="name">employee.service.view.tree</field>
+        <field name="model">employee.service</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- service action-->
+    <record id="employee_service_action" model='ir.actions.act_window'>
+        <field name="name">service</field>
+        <field name="res_model">employee.service</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- service menu-->
+    <menuitem id="employee_service_menu" name="service" sequence="10" parent="hr.menu_hr_root"
+              action="employee_service_action"/>
+
+</odoo>

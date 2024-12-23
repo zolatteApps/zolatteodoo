@@ -13,4 +13,9 @@
         "views/hr_employee_views.xml",
     ],
     'license': 'LGPL-3',
+    "images": ["static/description/banner.webp"],
+    "license": "AGPL-3",
+    "installable": True,
+    "auto_install": False,
+    "application": True,
 }
